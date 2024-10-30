@@ -7,6 +7,7 @@ import MyOrder from '../MyOrder'
 import MyOrders from '../MyOrders'
 import NotFound from '../NotFound'
 import SingIn from '../SingIn'
+import Navbar from '../../Components/Navbar'
 import './App.css'
 
 const AppRoutes = () => {
@@ -15,7 +16,7 @@ const AppRoutes = () => {
     { path: '/my-account', element: <MyAccount /> },
     { path: '/my-order', element: <MyOrder /> },
     { path: '/my-orders', element: <MyOrders /> },
-    { path: '/sing-in', element: <NotFound /> },
+    { path: '/sing-in', element: <SingIn /> },
     { path: '/*', element: <NotFound /> },
   ])
 
@@ -27,6 +28,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <AppRoutes />
+      <Navbar />
     </BrowserRouter>
   )
 }
