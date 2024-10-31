@@ -6,9 +6,8 @@ import { ShoppingBagIcon } from "@heroicons/react/24/outline";
 import { EnvelopeIcon } from "@heroicons/react/24/outline"; 
 import { ArrowRightOnRectangleIcon } from "@heroicons/react/24/outline";
 import { ShoppingCartContext } from "../../Context";
-import 
 
-const Navbar = () => {
+    const Navbar = () => {
     const context = useContext(ShoppingCartContext);
     const activeSytle = 'underline underline-offset-4'
 
