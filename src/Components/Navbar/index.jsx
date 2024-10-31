@@ -1,6 +1,12 @@
 import { NavLink } from "react-router-dom";
 import { useContext } from "react";
+import { ShoppingCartIcon } from "@heroicons/react/24/outline";
+import { UserCircleIcon } from "@heroicons/react/24/outline";
+import { ShoppingBagIcon } from "@heroicons/react/24/outline";
+import { EnvelopeIcon } from "@heroicons/react/24/outline"; 
+import { ArrowRightOnRectangleIcon } from "@heroicons/react/24/outline";
 import { ShoppingCartContext } from "../../Context";
+import 
 
 const Navbar = () => {
     const context = useContext(ShoppingCartContext);
@@ -62,38 +68,42 @@ const Navbar = () => {
                 </li>
             </ul>
             <ul className="flex items-center gap-3">
-                <li className="text-black/60">
+                <li className="text-black/60 flex">
+                    <EnvelopeIcon className="h-6 w-6 text-black inline" />
                     Jose@platzi.com
                 </li>
-                <li>
+                <li className='flex'>
                     <NavLink 
                     to="/my-orders"
                     className ={({ isActive}) =>
                         isActive ? activeSytle: undefined
                     }>
+                        <ShoppingBagIcon className="h-6 w-6 text-black inline"/>
                         My Orders
                     </NavLink>
                 </li>
-                <li>
+                <li className='flex'>
                     <NavLink 
-                    to="/my-account"
+                    to="/my-account" 
                     className ={({ isActive}) =>
                         isActive ? activeSytle: undefined
                     }>
+                        <UserCircleIcon className="h-6 w-6 text-black inline" />
                         My Account
                     </NavLink>
                 </li>
-                <li>
+                <li className='flex'>
                     <NavLink 
                     to="/sing-in"
                     className ={({ isActive}) =>
                         isActive ? activeSytle: undefined
                     }>
+                        <ArrowRightOnRectangleIcon className="h-6 w-6 text-black inline" />
                         Sign In
                     </NavLink>
                 </li>
-                <li>
-                    🛒 {context.count}
+                <li className='flex'>
+                    <ShoppingCartIcon className="h-6 w-6 text-black inline" />{context.count}
                 </li>
             </ul>
         </nav>
