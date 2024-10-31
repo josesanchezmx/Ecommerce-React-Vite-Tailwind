@@ -1,15 +1,17 @@
-
-import { createContext } from 'react';
+import { createContext, useState } from 'react';
 
 // creacion del context global
-const ShoppingCarContext = createContext()
-
+export const ShoppingCartContext = createContext()
 
 // componente retorno el porvedor hace un grapper vive toda la aplicacion
-export const ShoppingCarProvider = ({children}) => {
+export const ShoppingCartProvider = ({children}) => {
+    const [count, setCount] = useState(0);
     return (
-        <ShoppingCarContext.Provider>
+        <ShoppingCartContext.Provider value={{
+            count,
+            setCount
+        }}>
             {children}
-        </ShoppingCarContext.Provider>
+        </ShoppingCartContext.Provider>
     )
 }
