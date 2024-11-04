@@ -1,32 +1,43 @@
-import { createContext, useState } from 'react';
+import { createContext, useState } from 'react'
 
-// creacion del context global
 export const ShoppingCartContext = createContext()
 
-// componente retorno el porvedor hace un grapper vive toda la aplicacion
 export const ShoppingCartProvider = ({children}) => {
-    // Shoping Cart . Increment quantitu
-    const [count, setCount] = useState(0)
+  // Shopping Cart · Increment quantity
+  const [count, setCount] = useState(0)
 
-    // Product Datail  . Open/Close
-    const [isProductDetailOpen, setIsProductDatailOpen] = useState(false)
-    const openProductDetail = () => setIsProductDatailOpen(true) 
-    const closeProductDetail = () => setIsProductDatailOpen(false)
+  // Product Detail · Open/Close
+  const [isProductDetailOpen, setIsProductDetailOpen] = useState(false)
+  const openProductDetail = () => setIsProductDetailOpen(true)
+  const closeProductDetail = () => setIsProductDetailOpen(false)
 
-    // Product Detail . show product
-    const [productToShow, setProductToShow] = useState({})
+  // Checkout Side Menu · Open/Close
+  const [isCheckoutSideMenuOpen, setIsCheckoutSideMenuOpen] = useState(false)
+  const openCheckoutSideMenu = () => setIsCheckoutSideMenuOpen(true)
+  const closeCheckoutSideMenu = () => setIsCheckoutSideMenuOpen(false)
 
-    return (
-        <ShoppingCartContext.Provider value={{
-            count,
-            setCount,
-            openProductDetail,
-            closeProductDetail,
-            isProductDetailOpen,
-            productToShow,
-            setProductToShow
-        }}>
-            {children}
-        </ShoppingCartContext.Provider>
-    )
+  // Product Detail · Show product
+  const [productToShow, setProductToShow] = useState({})
+
+  // Shopping Cart · Add products to cart
+  const [cartProducts, setCartProducts] = useState([])
+
+  return (
+    <ShoppingCartContext.Provider value={{
+      count,
+      setCount,
+      openProductDetail,
+      closeProductDetail,
+      isProductDetailOpen,
+      productToShow,
+      setProductToShow,
+      cartProducts,
+      setCartProducts,
+      isCheckoutSideMenuOpen,
+      openCheckoutSideMenu,
+      closeCheckoutSideMenu
+    }}>
+      {children}
+    </ShoppingCartContext.Provider>
+  )
 }
