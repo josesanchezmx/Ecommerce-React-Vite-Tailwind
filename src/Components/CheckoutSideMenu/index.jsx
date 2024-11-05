@@ -6,13 +6,21 @@ import './styles.css'
 
 const CheckoutSideMenu = () => {
   const context = useContext(ShoppingCartContext)
-  //console.log('Updated Cart: ', [...context.cartProducts]); // Verificar el nuevo contenido del carrito
 
+  const handleDelete = (id) => {
+    const filteredProducts = context.cartProducts.filter(product => product.id != id)
+    context.setCartProducts(filteredProducts)
+    // veifica que no este en cero el contador de productos
+    if (context.count > 0) {
+    context.setCount(context.count - 1);
+    }
+  }
   return (
     <aside
       className={`${context.isCheckoutSideMenuOpen ? 'flex' : 'hidden'} checkout-side-menu flex-col fixed right-0 border border-black rounded-lg bg-white`}>
       <div className='flex justify-between items-center p-6'>
         <h2 className='font-medium text-xl'>My Order</h2>
+        <h2 className='font-light'>({context.count} products)</h2>
         <div>
           <XMarkIcon
             className='h-6 w-6 text-black cursor-pointer'
@@ -24,9 +32,11 @@ const CheckoutSideMenu = () => {
           context.cartProducts.map((product) => (
             <OrderCard 
             key={product.id}
+            id={product.id}
             title={product.title}
             imageUrl={product.images}
             price={product.price} 
+            handleDelete={handleDelete}
           />
           ))
         }
