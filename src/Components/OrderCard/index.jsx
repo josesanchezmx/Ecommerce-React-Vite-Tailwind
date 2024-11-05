@@ -5,9 +5,9 @@ const OrderCard = props => {
 
     let renderTrashIcon
     if (handleDelete) {
-        <TrashIcon
+        renderTrashIcon =<TrashIcon onClick={() => handleDelete(id)}
         className='h-6 w-6 text-black cursor-pointer'
-        onClick={() => handleDelete(id)}></TrashIcon>
+        ></TrashIcon>
     }
     return (
         <div className='flex justify-between items-center mb-3'>
