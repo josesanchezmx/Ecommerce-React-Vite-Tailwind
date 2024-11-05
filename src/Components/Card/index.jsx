@@ -1,4 +1,4 @@
-import { PlusIcon } from '@heroicons/react/24/outline';
+import { PlusIcon, CheckIcon } from '@heroicons/react/24/outline';
 import { useContext } from 'react';
 import { ShoppingCartContext } from '../../Context';
 
@@ -8,37 +8,52 @@ const Card = ({ data }) => {
 
     // Función para mostrar el producto
     const showProduct = () => {
-        context.setProductToShow(data); // Establecer el producto a mostrar
-        context.openProductDetail(); // Abrir el detalle del producto
+        context.setProductToShow(data);
+        context.openProductDetail();
     };
 
     // Función para agregar productos al carrito
     const addProductsToCart = (event) => {
-        event.stopPropagation(); // Evitar la propagación del evento
+        event.stopPropagation();
         context.setCount(context.count + 1);
-        context.setCartProducts([...context.cartProducts, data]); // Agregar el producto al carrito
+        context.setCartProducts([...context.cartProducts, data]);
         context.openCheckoutSideMenu();
-        context.closeProductDetail(); // Corrected the typo here
+        context.closeProductDetail();
+    };
+
+    const renderIcon = (id) => {
+        const isInCart = context.cartProducts.some(product => product.id === id);
+
+        if (isInCart) {
+            return (
+                <div className='absolute top-0 right-0 flex justify-center items-center bg-black w-6 h-6 rounded-full m-2 p-1'>
+                    <CheckIcon className='h-6 w-6 text-white' />
+                </div>
+            );
+        } else {
+            return (
+                <div
+                    className='absolute top-0 right-0 flex justify-center items-center bg-white w-6 h-6 rounded-full m-2 p-1'
+                    onClick={addProductsToCart}
+                >
+                    <PlusIcon className='h-6 w-6 text-black' />
+                </div>
+            );
+        }
     };
 
     return (
-        <div 
-            className='bg-white cursor-pointer w-56 h-60 rounded-lg shadow-lg'
-            onClick={showProduct}>
+        <div className='bg-white cursor-pointer w-56 h-60 rounded-lg shadow-lg' onClick={showProduct}>
             <figure className='relative mb-2 w-full h-4/5'>
                 <span className='absolute bottom-0 left-0 bg-white/60 rounded-lg text-black text-xs m-2 px-3 py-0.5'>
-                    {data.category.name} {/* Nombre de la categoría */}
+                    {data.category.name}
                 </span>
                 <img
                     className='w-full h-full object-cover rounded-lg'
-                    src={data.images[0]} // Primera imagen del producto
-                    alt={data.title} // Título del producto como alt
+                    src={data.images[0]}
+                    alt={data.title}
                 />
-                <div 
-                    className='absolute top-0 right-0 flex justify-center items-center bg-white w-6 h-6 rounded-full m-2 p-1'
-                    onClick={addProductsToCart}> {/* Usar solo addProductsToCart para el evento */}
-                    <PlusIcon className='h-6 w-6 text-black'></PlusIcon>
-                </div>
+                {renderIcon(data.id)} {/* Cambiado a data.id */}
             </figure>
             <p className='flex justify-between px-2 pb-2'>
                 <span className='text-sm font-light'>{data.title}</span>
