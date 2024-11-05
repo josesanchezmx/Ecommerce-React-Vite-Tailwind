@@ -11,6 +11,15 @@ import { ShoppingCartContext } from "../../Context";
     const context = useContext(ShoppingCartContext);
     const activeSytle = 'underline underline-offset-4'
 
+    // Definimos la función para alternar el menú lateral
+  const toggleCheckoutSideMenu = () => {
+    if (context.isCheckoutSideMenuOpen) {
+      context.closeCheckoutSideMenu();
+    } else {
+      context.openCheckoutSideMenu();
+    }
+  };
+
     return (
         <nav className="flex justify-between items-center fixed  z-10 top-0 w-full py-5 px-8 text-sm font-light ">
             <ul className="flex items-center gap-3">
@@ -101,8 +110,9 @@ import { ShoppingCartContext } from "../../Context";
                         Sign In
                     </NavLink>
                 </li>
-                <li className='flex'>
-                    <ShoppingCartIcon className="h-6 w-6 text-black inline" />{context.count}
+                <li className="flex cursor-pointer" onClick={toggleCheckoutSideMenu}>
+                    <ShoppingCartIcon className="h-6 w-6 text-black inline" />
+                    {context.count}
                 </li>
             </ul>
         </nav>
