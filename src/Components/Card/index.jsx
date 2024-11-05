@@ -19,7 +19,6 @@ const Card = ({ data }) => {
         context.setCartProducts([...context.cartProducts, data]); // Agregar el producto al carrito
         context.openCheckoutSideMenu();
         context.closeProductDetail(); // Corrected the typo here
-        console.log('Updated Cart: ', [...context.cartProducts, data]); // Verificar el nuevo contenido del carrito
     };
 
     return (
