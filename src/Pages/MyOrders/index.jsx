@@ -9,19 +9,22 @@ function MyOrders() {
 
   return (
     <Layout>
-      <div className='flex items-center justify-center relative w-80 '>
-        <h1>My Orders</h1>
+      <div className="flex items-center justify-center relative w-full py-6">
+        <h1 className="text-4xl font-semibold text-gray-800">My Orders</h1>
       </div>
-      {
-        context.order.map((order, index) => (
-          <Link key={index} to={`/my/orders/${index}`}>
-            <OrdersCard 
-              totalPrice={order.totalPrice}
-              totalProducts={order.totalProducts} 
-            />  
-          </Link>
-        ))
-      }
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {context.order.map((order, index) => (
+            <Link key={index} to={`/my/orders/${index}`}>
+              <OrdersCard 
+                date={order.date}
+                totalPrice={order.totalPrice}
+                totalProducts={order.totalProducts} 
+              />
+            </Link>
+          ))}
+        </div>
+      </div>
     </Layout>
   )
 }

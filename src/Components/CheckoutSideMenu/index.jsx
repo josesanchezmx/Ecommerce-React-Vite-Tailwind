@@ -24,10 +24,10 @@ const CheckoutSideMenu = () => {
     const  formattedDate = now.toLocaleDateString();
 
     const orderToAdd = {
-      Date: formattedDate,
+      date: formattedDate,
       products: context.cartProducts,
       totalProducts: context.cartProducts.length,
-      total: totalPrice(context.cartProducts),
+      totalPrice: totalPrice(context.cartProducts),
     }
 
     context.setOrder([...context.order, orderToAdd])
