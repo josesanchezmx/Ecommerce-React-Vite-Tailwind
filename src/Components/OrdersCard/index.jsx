@@ -1,4 +1,5 @@
 import { ChevronRightIcon } from '@heroicons/react/24/solid'
+import { CalendarDaysIcon, ShoppingBagIcon } from '@heroicons/react/24/solid'
 
 const OrdersCard = props => {
   const { date, totalPrice, totalProducts } = props;
@@ -8,15 +9,24 @@ const OrdersCard = props => {
       {/* Main Content */}
       <div className="relative z-10 p-6">
         {/* Date and Total Products */}
-        <div className="mb-4 text-center">
-          <p className="text-lg font-semibold text-gray-800">{date}</p>
-          <p className="text-sm text-gray-600">{totalProducts} articles</p>
+        <div className="mb-4 text-center flex flex-col">
+          {/* Date on top */}
+          <div className="flex items-center mb-2">
+            <CalendarDaysIcon className="h-6 w-6 text-gray-600 mr-2" />
+            <p className="text-lg font-semibold text-gray-800">{date}</p>
+          </div>
+
+          {/* Products below the date */}
+          <div className="flex items-center mb-2">
+            <ShoppingBagIcon className="h-6 w-6 text-gray-600 mr-2" />
+            <p className="text-sm text-gray-600">{totalProducts} articles</p>
+          </div>
         </div>
 
         {/* Price and Chevron */}
         <div className="flex items-center justify-between mt-4">
-          {/* Price centered */}
-          <div className="flex-1 text-center">
+          {/* Price aligned to the right */}
+          <div className="flex-1 text-right">
             <span className="text-3xl font-extrabold text-gray-800">{`$${totalPrice}`}</span>
           </div>
           {/* Chevron icon to the right */}
@@ -31,3 +41,4 @@ const OrdersCard = props => {
 }
 
 export default OrdersCard;
+
