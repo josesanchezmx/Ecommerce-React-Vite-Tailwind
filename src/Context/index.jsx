@@ -29,9 +29,11 @@ export const ShoppingCartProvider = ({children}) => {
   // Get Products
   const [items, setItems] = useState([]);
 
+  // filter items
+  const [filteredItems, setFilteredItems] = useState([]);
+  
   // Get Products Title
-  const [searchByTitle, setSearchByTitle] = useState([]);
-  console.log(searchByTitle)
+  const [searchByTitle, setSearchByTitle] = useState("");
 
   useEffect(() => {
     fetch('https://api.escuelajs.co/api/v1/products')
@@ -39,6 +41,13 @@ export const ShoppingCartProvider = ({children}) => {
       .then(data => setItems(data));
   }, []);
 
+  const filteredItemsByTitle = (items,searchByTitle) => {
+    return items?.filter(item => item.title.toLowerCase().includes(searchByTitle.toLowerCase()) )
+  }
+
+  useEffect(() => {
+    if(searchByTitle) setFilteredItems(filteredItemsByTitle(items,searchByTitle))
+  }, [items, searchByTitle]);
 
   return (
     <ShoppingCartContext.Provider value={{
@@ -60,6 +69,7 @@ export const ShoppingCartProvider = ({children}) => {
       setItems,
       searchByTitle,
       setSearchByTitle,
+      filteredItems,
     }}>
       {children}
     </ShoppingCartContext.Provider>
