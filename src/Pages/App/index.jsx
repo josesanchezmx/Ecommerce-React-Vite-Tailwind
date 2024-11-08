@@ -10,19 +10,22 @@ import NotFound from '../NotFound'
 import SingIn from '../SingIn'
 import Navbar from '../../Components/Navbar'
 import CheckoutSideMenu from '../../Components/CheckoutSideMenu'
-import Clothes from '../Clothes'
 import './App.css'
 
 const AppRoutes = () => {
   let routes = useRoutes([ 
     { path: '/', element: <Home /> },
+    { path: '/Clothes', element: <Home /> },
+    { path: '/Electronics', element: <Home /> },
+    { path: '/Furnitus', element: <Home /> },
+    { path: '/Toys', element: <Home /> },
+    { path: '/Others', element: <Home /> },
     { path: '/my-account', element: <MyAccount /> },
     { path: '/my-order', element: <MyOrder /> },
     { path: '/my-orders', element: <MyOrders /> },
     { path: '/my-orders/last', element: <MyOrder /> },
     { path: '/my/orders/:id', element: <MyOrder /> },
     { path: '/sing-in', element: <SingIn /> },
-    { path: '/Clothes', element: <Clothes /> },
     { path: '/*', element: <NotFound /> },
   ])
 

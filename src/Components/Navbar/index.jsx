@@ -31,6 +31,7 @@ import { ShoppingCartContext } from "../../Context";
                 <li>
                     <NavLink 
                     to="/"
+                    onClick={() => context.setSearchByCategory()}
                     className ={({ isActive}) =>
                         isActive ? activeSytle: undefined
                     }>
@@ -41,6 +42,7 @@ import { ShoppingCartContext } from "../../Context";
                 <li>
                     <NavLink 
                     to="/Clothes"
+                    onClick={() => context.setSearchByCategory('clothes')}
                     className ={({ isActive}) =>
                         isActive ? activeSytle: undefined
                     }>
@@ -49,7 +51,18 @@ import { ShoppingCartContext } from "../../Context";
                 </li>
                 <li>
                     <NavLink 
+                    to="/Electronics"
+                    onClick={() => context.setSearchByCategory('Electronics')}
+                    className ={({ isActive}) =>
+                        isActive ? activeSytle: undefined
+                    }>
+                        Electronics 
+                    </NavLink>
+                </li>
+                <li>
+                    <NavLink 
                     to="/Furnitus"
+                    onClick={() => context.setSearchByCategory('Fornitus')}
                     className ={({ isActive}) =>
                         isActive ? activeSytle: undefined
                     }>
@@ -59,6 +72,7 @@ import { ShoppingCartContext } from "../../Context";
                 <li>
                     <NavLink 
                     to="/Toys"
+                    onClick={() => context.setSearchByCategory('toys')}
                     className ={({ isActive}) =>
                         isActive ? activeSytle: undefined
                     }>
@@ -68,6 +82,7 @@ import { ShoppingCartContext } from "../../Context";
                 <li>
                     <NavLink 
                     to="/Others"
+                    onClick={() => context.setSearchByCategory('')}
                     className ={({ isActive}) =>
                         isActive ? activeSytle: undefined
                     }>
@@ -112,7 +127,7 @@ import { ShoppingCartContext } from "../../Context";
                 </li>
                 <li className="flex cursor-pointer" onClick={toggleCheckoutSideMenu}>
                     <ShoppingCartIcon className="h-6 w-6 text-black inline" />
-                    {context.count}
+                    {context.cartProducts.length}
                 </li>
             </ul>
         </nav>
