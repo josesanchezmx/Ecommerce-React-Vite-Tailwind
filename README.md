@@ -18,5 +18,16 @@ Este es un proyecto de ecommerce desarrollado en **React** con **Tailwind CSS**.
 - **Platzi Fake Store API**: API para obtener productos de una tienda ficticia.
 - **Context API**: Para gestionar el estado del carrito de compras y las órdenes.
 
+## Despliegue
+
+Puedes acceder al despliegue del proyecto en Netlify haciendo clic en el ícono:  
+[![Netlify](https://img.icons8.com/?size=50&id=YsPdguLCFOMH&format=png&color=000000 "Netlify")](https://stalwart-melomakarona-4b5457.netlify.app)[![GitHub Pages](https://img.icons8.com/?size=50&id=106564&format=png&color=000000 "GitHub Pages")](https://josesanchezmx.github.io/Ecommerce-React-Vite-Tailwind/)
+
+
 ## Contacto
-<a href="https://www.linkedin.com/in/josé-alberto-sánchez-montiel-8a9b811a6" target="_blank"><img src="https://img.icons8.com/ios-filled/30/0A66C2/linkedin.png" alt="LinkedIn" style="vertical-align: middle;"/></a>
+
+Conéctate conmigo en [LinkedIn](https://www.linkedin.com/in/josé-alberto-sánchez-montiel-8a9b811a6) <a href="https://www.linkedin.com/in/josé-alberto-sánchez-montiel-8a9b811a6" target="_blank"><img src="https://img.icons8.com/ios-filled/30/0A66C2/linkedin.png" alt="LinkedIn" style="vertical-align: middle;"/></a>
+
+## Curso
+
+[Curso de React.js con Vite.js y TailwindCSS en Platzi](https://platzi.com/cursos/react-vite-tailwindcss/ "Curso de React.js con Vite.js y TailwindCSS")
