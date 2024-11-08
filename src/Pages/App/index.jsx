@@ -10,6 +10,7 @@ import NotFound from '../NotFound'
 import SingIn from '../SingIn'
 import Navbar from '../../Components/Navbar'
 import CheckoutSideMenu from '../../Components/CheckoutSideMenu'
+import Clothes from '../Clothes'
 import './App.css'
 
 const AppRoutes = () => {
@@ -21,6 +22,7 @@ const AppRoutes = () => {
     { path: '/my-orders/last', element: <MyOrder /> },
     { path: '/my/orders/:id', element: <MyOrder /> },
     { path: '/sing-in', element: <SingIn /> },
+    { path: '/Clothes', element: <Clothes /> },
     { path: '/*', element: <NotFound /> },
   ])
 
