@@ -93,7 +93,7 @@ import { ShoppingCartContext } from "../../Context";
             <ul className="flex items-center gap-3">
                 <li className="text-black/60 flex">
                     <EnvelopeIcon className="h-6 w-6 text-black inline" />
-                    Jose@platzi.com
+                    montieljose711@gmail.com
                 </li>
                 <li className='flex'>
                     <NavLink 
