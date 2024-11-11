@@ -21,7 +21,7 @@ Este es un proyecto de ecommerce desarrollado en **React** con **Tailwind CSS**.
 ## Despliegue
 
 Puedes acceder al despliegue del proyecto en Netlify haciendo clic en el ícono:  
-[![Netlify](https://img.icons8.com/?size=50&id=YsPdguLCFOMH&format=png&color=000000 "Netlify")](https://stalwart-melomakarona-4b5457.netlify.app)[![GitHub Pages](https://img.icons8.com/?size=50&id=106564&format=png&color=000000 "GitHub Pages")](https://josesanchezmx.github.io/Ecommerce-React-Vite-Tailwind/)
+[![Netlify](https://img.icons8.com/?size=50&id=YsPdguLCFOMH&format=png&color=000000 "Netlify")](https://admirable-crumble-7e06c8.netlify.app/)[![GitHub Pages](https://img.icons8.com/?size=50&id=106564&format=png&color=000000 "GitHub Pages")](https://josesanchezmx.github.io/Ecommerce-React-Vite-Tailwind/)
 
 
 ## Contacto
