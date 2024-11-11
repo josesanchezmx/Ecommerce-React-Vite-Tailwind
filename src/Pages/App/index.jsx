@@ -1,4 +1,6 @@
-import { useRoutes, HashRouter } from 'react-router-dom' 
+//import reactLogo from './assets/react.svg'
+//import viteLogo from '/vite.svg'
+import { useRoutes, BrowserRouter } from 'react-router-dom'
 import { ShoppingCartProvider } from '../../Context'
 import Home from '../Home'
 import MyAccount from '../MyAccount'
@@ -34,11 +36,11 @@ const App = () => {
 
   return (
     <ShoppingCartProvider>
-      <HashRouter> 
+      <BrowserRouter>
         <AppRoutes />
         <Navbar />
         <CheckoutSideMenu />
-      </HashRouter>
+      </BrowserRouter>
     </ShoppingCartProvider>
   )
 }
